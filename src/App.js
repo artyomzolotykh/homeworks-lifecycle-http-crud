@@ -31,6 +31,7 @@ function App() {
       body: JSON.stringify(newItem)
     })
       .then(setReload(Math.random()))
+      .then(console.log(Math.random()))
       .then(setMessage(''));
   }
 
@@ -38,6 +39,7 @@ function App() {
     fetch(url + id, {
       method: 'DELETE'
     })
+      .then(console.log(Math.random()))
       .then(setReload(Math.random()));
   }
 
