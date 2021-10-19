@@ -30,7 +30,7 @@ function App() {
       },
       body: JSON.stringify(newItem)
     })
-      .then(reload());
+      .then(reloadPage());
 
     setMessage('');
   }
@@ -39,10 +39,10 @@ function App() {
     fetch(url + id, {
       method: 'DELETE'
     })
-      .then(reload());
+      .then(reloadPage());
   }
 
-  const reload = () => {
+  const reloadPage = () => {
     setReload(Math.random());
   }
 
@@ -57,7 +57,7 @@ function App() {
 
       <div className="header">
         <span>Notes</span>
-        <button onClick={reload}>↻</button>
+        <button onClick={reloadPage}>↻</button>
       </div>
 
       <div className="wrapper">
