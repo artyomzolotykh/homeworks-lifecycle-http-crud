@@ -30,7 +30,7 @@ function App() {
       },
       body: JSON.stringify(newItem)
     })
-      .then(reloadPage());
+      .then(setReload(Math.random()));
 
     setMessage('');
   }
@@ -39,7 +39,7 @@ function App() {
     fetch(url + id, {
       method: 'DELETE'
     })
-      .then(reloadPage());
+      .then(setReload(Math.random()));
   }
 
   const reloadPage = () => {
