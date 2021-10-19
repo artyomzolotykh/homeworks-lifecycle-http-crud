@@ -1,23 +1,77 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import Item from './components/Item';
 
 function App() {
+  const url = 'http://localhost:7777/notes/';
+
+  const [message, setMessage] = useState('');
+  const [listing, setListing] = useState([]);
+  const [reload, setReload] = useState(0);
+
+  const handleMessageChange = evt => {
+    const {value} = evt.target;
+    setMessage(value);
+  }
+
+  const handleSubmit = evt => {
+    const id = listing.length > 0 ? listing[listing.length - 1].id + 1 : 0;
+
+    evt.preventDefault();
+    const newItem = {
+      "id": id,
+      "content": message
+    }
+    
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+      },
+      body: JSON.stringify(newItem)
+    })
+      .then(reload());
+
+    setMessage('');
+  }
+
+  const removeItem = id => {
+    fetch(url + id, {
+      method: 'DELETE'
+    })
+      .then(reload());
+  }
+
+  const reload = () => {
+    setReload(Math.random());
+  }
+
+  useEffect(() => {
+    fetch(url)
+      .then(response => response.json())
+      .then(commits => setListing(commits))
+  }, [reload]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <div className="header">
+        <span>Notes</span>
+        <button onClick={reload}>↻</button>
+      </div>
+
+      <div className="wrapper">
+        {listing.map(item => <Item key={item.id} item={item} removeItem={removeItem} />)}
+      </div>
+
+      <form onSubmit={handleSubmit}>
+        <div className="title">
+          New Note
+        </div>
+        <textarea value={message} onChange={handleMessageChange} />
+        <button type="submit">→</button>
+      </form>
+
     </div>
   );
 }
