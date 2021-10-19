@@ -30,9 +30,8 @@ function App() {
       },
       body: JSON.stringify(newItem)
     })
-      .then(setReload(Math.random()));
-
-    setMessage('');
+      .then(setReload(Math.random()))
+      .then(setMessage(''));
   }
 
   const removeItem = id => {
