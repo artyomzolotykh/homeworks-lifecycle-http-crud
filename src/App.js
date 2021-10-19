@@ -31,7 +31,6 @@ function App() {
       body: JSON.stringify(newItem)
     })
       .then(setReload(Math.random()))
-      .then(console.log(Math.random()))
       .then(setMessage(''));
   }
 
@@ -39,7 +38,6 @@ function App() {
     fetch(url + id, {
       method: 'DELETE'
     })
-      .then(console.log(Math.random()))
       .then(setReload(Math.random()));
   }
 
@@ -50,7 +48,7 @@ function App() {
   useEffect(() => {
     fetch(url)
       .then(response => response.json())
-      .then(commits => setListing(commits))
+      .then(commits => setListing(commits));
   }, [reload]);
 
   return (
