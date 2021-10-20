@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/homeworks-lifecycle-http-crud/static/css/main.f5bbb523.chunk.css",
-    "main.js": "/homeworks-lifecycle-http-crud/static/js/main.4a317edb.chunk.js",
-    "main.js.map": "/homeworks-lifecycle-http-crud/static/js/main.4a317edb.chunk.js.map",
+    "main.js": "/homeworks-lifecycle-http-crud/static/js/main.b8438e4a.chunk.js",
+    "main.js.map": "/homeworks-lifecycle-http-crud/static/js/main.b8438e4a.chunk.js.map",
     "runtime-main.js": "/homeworks-lifecycle-http-crud/static/js/runtime-main.24ac9455.js",
     "runtime-main.js.map": "/homeworks-lifecycle-http-crud/static/js/runtime-main.24ac9455.js.map",
-    "static/js/2.7019d216.chunk.js": "/homeworks-lifecycle-http-crud/static/js/2.7019d216.chunk.js",
-    "static/js/2.7019d216.chunk.js.map": "/homeworks-lifecycle-http-crud/static/js/2.7019d216.chunk.js.map",
+    "static/js/2.ffa6204b.chunk.js": "/homeworks-lifecycle-http-crud/static/js/2.ffa6204b.chunk.js",
+    "static/js/2.ffa6204b.chunk.js.map": "/homeworks-lifecycle-http-crud/static/js/2.ffa6204b.chunk.js.map",
     "static/js/3.3b033602.chunk.js": "/homeworks-lifecycle-http-crud/static/js/3.3b033602.chunk.js",
     "static/js/3.3b033602.chunk.js.map": "/homeworks-lifecycle-http-crud/static/js/3.3b033602.chunk.js.map",
     "index.html": "/homeworks-lifecycle-http-crud/index.html",
     "static/css/main.f5bbb523.chunk.css.map": "/homeworks-lifecycle-http-crud/static/css/main.f5bbb523.chunk.css.map",
-    "static/js/2.7019d216.chunk.js.LICENSE.txt": "/homeworks-lifecycle-http-crud/static/js/2.7019d216.chunk.js.LICENSE.txt"
+    "static/js/2.ffa6204b.chunk.js.LICENSE.txt": "/homeworks-lifecycle-http-crud/static/js/2.ffa6204b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.24ac9455.js",
-    "static/js/2.7019d216.chunk.js",
+    "static/js/2.ffa6204b.chunk.js",
     "static/css/main.f5bbb523.chunk.css",
-    "static/js/main.4a317edb.chunk.js"
+    "static/js/main.b8438e4a.chunk.js"
   ]
 }
