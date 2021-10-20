@@ -7,7 +7,10 @@ function App() {
 
   const [message, setMessage] = useState('');
   const [listing, setListing] = useState([]);
-  const [reload, setReload] = useState(0);
+
+  const reload = () => fetch(url)
+    .then(response => response.json())
+    .then(data => setListing(data));
 
   const handleMessageChange = evt => {
     const {value} = evt.target;
@@ -30,7 +33,9 @@ function App() {
       },
       body: JSON.stringify(newItem)
     })
-      .then(setReload(Math.random()))
+      .then(() => {
+        reload()
+      })
       .then(setMessage(''));
   }
 
@@ -38,18 +43,18 @@ function App() {
     fetch(url + id, {
       method: 'DELETE'
     })
-      .then(setReload(Math.random()));
+      .then(() => {
+        reload()
+      });
   }
 
   const reloadPage = () => {
-    setReload(Math.random());
+    reload();
   }
 
   useEffect(() => {
-    fetch(url)
-      .then(response => response.json())
-      .then(commits => setListing(commits));
-  }, [reload]);
+    reload();
+  }, []);
 
   return (
     <div className="App">
